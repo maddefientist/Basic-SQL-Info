@@ -1,0 +1,57 @@
+Basic Query Structure
+
+SELECT column1, column2, ...  
+FROM table_name  
+WHERE condition1 AND/OR condition2  
+ORDER BY column1 [ASC/DESC], column2 [ASC/DESC] ;  
+
+Filtering Data
+
+AND: Both conditions must be true.  
+SQL  
+WHERE country = 'USA' AND region = 'West'  
+OR: At least one condition must be true.  
+SQL  
+WHERE state = 'CA' OR state = 'OR'  
+BETWEEN: Filter values within a range (inclusive).  
+SQL  
+WHERE salary BETWEEN 50000 AND 80000  
+LIKE: Pattern matching with wildcards.  
+%: Matches zero or more characters. (city LIKE 'New%')  
+_: Matches a single character. (phone LIKE '_12-3456')  
+IN: Check against a list of values  
+SQL  
+WHERE job_title IN ('Manager', 'Analyst', 'Developer')  
+
+Operators
+
+= Equal to  
+<> or != Not equal to  
+> Greater than  
+< Less than  
+>= Greater than or equal to  
+<= Less than or equal to  
+
+Joins
+
+INNER JOIN: Return rows with matching values in both tables.  
+SQL  
+SELECT *  
+FROM employees  
+INNER JOIN departments ON employees.dept_id = departments.dept_id;  
+LEFT JOIN: Return all rows from the left table, matching rows from the right where possible.  
+SQL  
+SELECT *  
+FROM customers  
+LEFT JOIN orders ON customers.customer_id = orders.customer_id;  
+RIGHT JOIN: Return all rows from the right table, matching rows from the left where possible (similar to LEFT JOIN, but tables are reversed).  
+FULL OUTER JOIN: Return all rows from both tables, matching where possible.  
+
+Aggregate Functions
+
+AVG(column): Calculate the average of a column.  
+COUNT(column): Count the number of non-null values in a column.  
+COUNT(*): Count the number of rows.  
+MIN(column): Find the minimum value in a column.  
+MAX(column): Find the maximum value in a column.  
+SUM(column): Calculate the sum of values in a column.
